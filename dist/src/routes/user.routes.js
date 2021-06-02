@@ -1,0 +1,20 @@
+"use strict";
+var __importDefault = (this && this.__importDefault) || function (mod) {
+    return (mod && mod.__esModule) ? mod : { "default": mod };
+};
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.UserRouter = void 0;
+var express_1 = require("express");
+var multer_1 = __importDefault(require("multer"));
+var UserAvatarController_1 = __importDefault(require("../controllers/UserAvatarController"));
+var UserController_1 = require("../controllers/UserController");
+var ensureAuthenticated_1 = __importDefault(require("../middlewares/ensureAuthenticated"));
+var upload_1 = __importDefault(require("../config/upload"));
+var UserRouter = express_1.Router();
+exports.UserRouter = UserRouter;
+var userController = new UserController_1.UserController();
+var userAvatarController = new UserAvatarController_1.default();
+var upload = multer_1.default(upload_1.default);
+UserRouter.post('/', userController.create);
+UserRouter.use(ensureAuthenticated_1.default);
+UserRouter.patch('/avatar', upload.single('avatar'), userAvatarController.update);
