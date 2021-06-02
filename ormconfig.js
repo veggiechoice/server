@@ -1,16 +1,16 @@
 module.exports = [{
   name: "default",
   url: process.env.DATABASE_URL,
-  ssl: true,
-  extra: {
-    ssl: {
-      rejectUnauthorized: false,
-    },
-  },
+  // ssl: true,
+  // extra: {
+  //   ssl: {
+  //     rejectUnauthorized: false,
+  //   },
+  // },
   type: "postgres",
   logging: false,
-  migrations: ["./dist/src/database/migrations/**.js"],
-  entities: ["./dist/src/models/**.js"],
+  migrations: ["./src/database/migrations/**.ts"],
+  entities: ["./src/models/**.ts"],
   cli: {
       "migrationsDir": "./src/database/migrations"
   },

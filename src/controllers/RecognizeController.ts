@@ -17,7 +17,7 @@ class RecognizeController {
 
   public async index(request: Request, response: Response) {
     const { _scan } = request.query;
-    const url = `${process.env.API_URL}/labels/resized/${request.filename}`;
+    const url = `${process.env.FILES_URL}/labels/resized/${request.filename}`;
     let text: string[] = [];
     this.storageProvider = new DiskStorageProvider(
       uploadConfig.directory,

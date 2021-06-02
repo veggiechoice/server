@@ -25,8 +25,9 @@ class User {
   @Column()
   email: string;
 
+  @Exclude()
   @Column()
-  password: string;
+  password?: string;
 
   @ManyToOne(() => Adress, {
     eager: true,

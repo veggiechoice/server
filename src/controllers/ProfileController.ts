@@ -50,7 +50,7 @@ class ProfileController {
     if (password && old_password) {
       const checkOldPassword = await this.hashProvider.compareHash(
         old_password,
-        user.password,
+        String(user.password),
       );
 
       if (!checkOldPassword) {
@@ -75,6 +75,7 @@ class ProfileController {
       throw new AppError('Canot Find this user');
     }
 
+    delete user.password;
     return response.json(user);
   }
 

@@ -15,4 +15,10 @@ export default {
       return callback(null, fileName);
     },
   }),
+  config: {
+    disk: {},
+    aws: {
+      bucket: process.env.AWS_S3_BUCKET,
+    },
+  },
 };

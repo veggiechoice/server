@@ -52,7 +52,7 @@ class UsersRepository {
     return user;
   }
 
-  public async save(user: IUser) {
+  public async save(user: User) {
     return this.ormRepository.save(user);
   }
 
