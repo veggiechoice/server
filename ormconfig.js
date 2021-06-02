@@ -9,8 +9,8 @@ module.exports = [{
   } : {},
   type: "postgres",
   logging: false,
-  migrations: process.env.NODE_ENV === 'development' ? ["./src/database/migrations/**.ts"] : ["./src/database/migrations/**.js"],
-  entities: process.env.NODE_ENV === 'development' ?  ["./src/models/**.ts"] :  ["./src/models/**.js"],
+  migrations: process.env.NODE_ENV === 'development' ? ["./src/database/migrations/**.ts"] : ["./dist/src/database/migrations/**.js"],
+  entities: process.env.NODE_ENV === 'development' ?  ["./src/models/**.ts"] :  ["./dist/src/models/**.js"],
   cli: {
       "migrationsDir": "./src/database/migrations"
   },
