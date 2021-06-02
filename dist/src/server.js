@@ -12,6 +12,7 @@ require("dotenv/config");
 var mongoose_1 = __importDefault(require("mongoose"));
 var routes_1 = require("./routes");
 require("./database");
+var AppError_1 = __importDefault(require("./errors/AppError"));
 var upload_1 = __importDefault(require("./config/upload"));
 var app = express_1.default();
 app.use(express_1.default.json());
@@ -22,20 +23,18 @@ mongoose_1.default.connect(String(process.env.MONGO_URL), {
     useNewUrlParser: true,
     useUnifiedTopology: true,
 });
-// app.use(
-//   (err: Error, _request: Request, response: Response, _next: NextFunction) => {
-//     if (err instanceof AppError) {
-//       return response.status(err.statusCode).json({
-//         status: err.status,
-//         message: err.message,
-//       });
-//     }
-//     return response.status(500).json({
-//       status: 'error',
-//       message: 'Internal Server Error',
-//     });
-//   },
-// );
+app.use(function (err, _request, response, _next) {
+    if (err instanceof AppError_1.default) {
+        return response.status(err.statusCode).json({
+            status: err.status,
+            message: err.message,
+        });
+    }
+    return response.status(500).json({
+        status: 'error',
+        message: 'Internal Server Error',
+    });
+});
 app.listen(process.env.PORT || 3333, function () {
     console.log("\uD83E\uDE90 - SERVER STARTED AT " + process.env.PORT);
 });
