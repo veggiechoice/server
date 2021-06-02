@@ -3,6 +3,9 @@ module.exports = [{
         name: "default",
         url: process.env.DATABASE_URL,
         type: "postgres",
+        extra: {
+          ssl: true
+        },
         logging: false,
         migrations: ["./dist/src/database/migrations/**.js"],
         entities: ["./dist/src/models/**.js"],
