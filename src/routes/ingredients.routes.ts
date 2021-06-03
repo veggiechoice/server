@@ -3,6 +3,7 @@ import multer from 'multer';
 import uploadConfig from '../config/upload';
 import { IngredientsController } from '../controllers/IngredientsController';
 import { RecognizeController } from '../controllers/RecognizeController';
+import resizeImage from '../middlewares/resizeImage';
 
 import UploadImage from '../middlewares/uploadImage';
 
@@ -16,6 +17,7 @@ IngredientRouter.get('/', ingredientsController.index);
 IngredientRouter.post(
   '/scan',
   upload.single('ingredients'),
+  resizeImage,
   UploadImage,
   recognizeController.index,
 );

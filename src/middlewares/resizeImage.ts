@@ -18,11 +18,10 @@ export default async function resizeImage(
     .toFile(
       path.resolve(
         req.file.destination,
-        'resized',
-        `${req.file.filename.split('.')[0]}.png`,
+        `${req.file.filename.split('.')[0]}-resized.png`,
       ),
     );
-  req.filename = `${req.file.filename.split('.')[0]}.png`;
+  req.filename = `${req.file.filename.split('.')[0]}-resized.png`;
   fs.unlinkSync(req.file.path);
   return next();
 }

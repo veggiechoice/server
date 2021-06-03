@@ -21,21 +21,21 @@ mongoose.connect(String(process.env.MONGO_URL), {
   useUnifiedTopology: true,
 });
 
-app.use(
-  (err: Error, _request: Request, response: Response, _next: NextFunction) => {
-    if (err instanceof AppError) {
-      return response.status(err.statusCode).json({
-        status: err.status,
-        message: err.message,
-      });
-    }
+// app.use(
+//   (err: Error, _request: Request, response: Response, _next: NextFunction) => {
+//     if (err instanceof AppError) {
+//       return response.status(err.statusCode).json({
+//         status: err.status,
+//         message: err.message,
+//       });
+//     }
 
-    return response.status(500).json({
-      status: 'error',
-      message: 'Internal Server Error',
-    });
-  },
-);
+//     return response.status(500).json({
+//       status: 'error',
+//       message: 'Internal Server Error',
+//     });
+//   },
+// );
 
 app.listen(process.env.PORT || 3333, () => {
   console.log(`🪐 - SERVER STARTED AT ${process.env.PORT}`);
