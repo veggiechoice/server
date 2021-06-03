@@ -1,0 +1,21 @@
+"use strict";
+var __importDefault = (this && this.__importDefault) || function (mod) {
+    return (mod && mod.__esModule) ? mod : { "default": mod };
+};
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.IngredientRouter = void 0;
+var express_1 = require("express");
+var multer_1 = __importDefault(require("multer"));
+var upload_1 = __importDefault(require("../config/upload"));
+var IngredientsController_1 = require("../controllers/IngredientsController");
+var RecognizeController_1 = require("../controllers/RecognizeController");
+var resizeImage_1 = __importDefault(require("../middlewares/resizeImage"));
+var uploadImage_1 = __importDefault(require("../middlewares/uploadImage"));
+var IngredientRouter = express_1.Router();
+exports.IngredientRouter = IngredientRouter;
+var ingredientsController = new IngredientsController_1.IngredientsController();
+var recognizeController = new RecognizeController_1.RecognizeController();
+var upload = multer_1.default(upload_1.default);
+IngredientRouter.get('/', ingredientsController.index);
+IngredientRouter.post('/scan', upload.single('ingredients'), resizeImage_1.default, uploadImage_1.default, recognizeController.index);
+IngredientRouter.get('/:id', ingredientsController.show);
