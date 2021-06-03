@@ -40,6 +40,8 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.ProfileController = void 0;
+/* eslint-disable no-empty-function */
+var class_transformer_1 = require("class-transformer");
 var AppError_1 = __importDefault(require("../errors/AppError"));
 var HashProvider_1 = require("../providers/HashProvider");
 var UsersRepository_1 = require("../repositories/UsersRepository");
@@ -99,7 +101,7 @@ var ProfileController = /** @class */ (function () {
                     case 5: return [4 /*yield*/, usersRepository.save(user)];
                     case 6:
                         newUser = _c.sent();
-                        return [2 /*return*/, response.json(newUser)];
+                        return [2 /*return*/, response.json(class_transformer_1.classToPlain(newUser))];
                 }
             });
         });
@@ -119,7 +121,7 @@ var ProfileController = /** @class */ (function () {
                             throw new AppError_1.default('Canot Find this user');
                         }
                         delete user.password;
-                        return [2 /*return*/, response.json(user)];
+                        return [2 /*return*/, response.json(class_transformer_1.classToPlain(user))];
                 }
             });
         });

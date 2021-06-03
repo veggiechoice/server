@@ -3,3 +3,4 @@ node_modules
 
 !tmp/.gitkeep
 .env
+production.env

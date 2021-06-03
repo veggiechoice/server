@@ -42,6 +42,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.SessionController = void 0;
 /* eslint-disable no-empty-function */
 var jsonwebtoken_1 = require("jsonwebtoken");
+var class_transformer_1 = require("class-transformer");
 var AppError_1 = __importDefault(require("../errors/AppError"));
 var HashProvider_1 = require("../providers/HashProvider");
 var UsersRepository_1 = require("../repositories/UsersRepository");
@@ -68,7 +69,7 @@ var SessionController = /** @class */ (function () {
                         if (!user) {
                             throw new AppError_1.default('No User was found with this e-mail', 'UserNotFound');
                         }
-                        return [4 /*yield*/, this.hashProvider.compareHash(password, user.password)];
+                        return [4 /*yield*/, this.hashProvider.compareHash(password, String(user.password))];
                     case 2:
                         passwordMatched = _c.sent();
                         if (!passwordMatched) {
@@ -80,7 +81,7 @@ var SessionController = /** @class */ (function () {
                             expiresIn: expiresIn,
                         });
                         // delete user.password;
-                        return [2 /*return*/, response.json({ user: user, token: token })];
+                        return [2 /*return*/, response.json({ user: class_transformer_1.classToPlain(user), token: token })];
                 }
             });
         });

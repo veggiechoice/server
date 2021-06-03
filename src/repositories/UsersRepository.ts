@@ -24,7 +24,7 @@ class UsersRepository {
       email,
     });
 
-    return classToPlain(user) || null;
+    return user || null;
   }
 
   public async findById(id: string) {

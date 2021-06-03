@@ -1,4 +1,5 @@
 /* eslint-disable no-empty-function */
+import { classToPlain } from 'class-transformer';
 import { Request, Response } from 'express';
 import AppError from '../errors/AppError';
 import { BCryptHashProvider } from '../providers/HashProvider';
@@ -61,7 +62,7 @@ class ProfileController {
     }
 
     const newUser = await usersRepository.save(user);
-    return response.json(newUser);
+    return response.json(classToPlain(newUser));
   }
 
   public async show(request: Request, response: Response) {
@@ -76,7 +77,7 @@ class ProfileController {
     }
 
     delete user.password;
-    return response.json(user);
+    return response.json(classToPlain(user));
   }
 
   public async destroy(request: Request, response: Response) {

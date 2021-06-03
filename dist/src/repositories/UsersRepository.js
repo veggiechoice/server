@@ -59,7 +59,7 @@ var UsersRepository = /** @class */ (function () {
                         })];
                     case 1:
                         user = _a.sent();
-                        return [2 /*return*/, class_transformer_1.classToPlain(user) || null];
+                        return [2 /*return*/, user || null];
                 }
             });
         });

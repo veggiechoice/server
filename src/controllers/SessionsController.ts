@@ -1,6 +1,7 @@
 /* eslint-disable no-empty-function */
 import { Secret, sign } from 'jsonwebtoken';
 import { Request, Response } from 'express';
+import { classToPlain } from 'class-transformer';
 import AppError from '../errors/AppError';
 import { BCryptHashProvider } from '../providers/HashProvider';
 import { UsersRepository } from '../repositories/UsersRepository';
@@ -28,7 +29,7 @@ class SessionController {
 
     const passwordMatched = await this.hashProvider.compareHash(
       password,
-      user.password,
+      String(user.password),
     );
 
     if (!passwordMatched) {
@@ -47,7 +48,7 @@ class SessionController {
 
     // delete user.password;
 
-    return response.json({ user, token });
+    return response.json({ user: classToPlain(user), token });
   }
 }
 
