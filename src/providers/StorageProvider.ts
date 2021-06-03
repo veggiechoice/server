@@ -1,15 +1,16 @@
 import fs from 'fs';
 import path from 'path';
 import { IStorageProvider } from './interfaces/IStorageProvider';
+import uploadConfig from '../config/upload';
 
 class DiskStorageProvider implements IStorageProvider {
   private directory: string;
 
   private uploadsFolder: string;
 
-  constructor(directory: string, uploadsFolder: string) {
-    this.directory = directory;
-    this.uploadsFolder = uploadsFolder;
+  constructor() {
+    this.directory = uploadConfig.directory;
+    this.uploadsFolder = uploadConfig.uploadsFolder;
   }
 
   public async saveFile(file: string): Promise<string> {

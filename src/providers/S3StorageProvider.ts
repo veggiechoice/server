@@ -1,6 +1,6 @@
 import fs from 'fs';
 import path from 'path';
-import mime from 'mime-types';
+
 import aws, { S3 } from 'aws-sdk';
 import uploadConfig from '../config/upload';
 import { IStorageProvider } from './interfaces/IStorageProvider';
@@ -20,13 +20,7 @@ class S3StorageProvider implements IStorageProvider {
       file,
     );
 
-    const ContentType = mime.contentType(originalPath);
-
     const fileContent = await fs.promises.readFile(originalPath);
-
-    if (!ContentType) {
-      throw new Error('File not Found');
-    }
 
     await this.client
       .putObject({
@@ -34,7 +28,7 @@ class S3StorageProvider implements IStorageProvider {
         Key: file,
         ACL: 'public-read',
         Body: fileContent,
-        ContentType,
+        ContentType: 'image/jpeg',
         ContentDisposition: `inline; filename=${file}`,
       })
       .promise();

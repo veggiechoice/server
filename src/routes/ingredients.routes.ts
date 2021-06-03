@@ -1,9 +1,10 @@
 import { Router } from 'express';
 import multer from 'multer';
-import uploadConfig from '../config/label_upload';
+import uploadConfig from '../config/upload';
 import { IngredientsController } from '../controllers/IngredientsController';
 import { RecognizeController } from '../controllers/RecognizeController';
-import resizeImage from '../middlewares/resizeImage';
+
+import UploadImage from '../middlewares/uploadImage';
 
 const IngredientRouter = Router();
 const ingredientsController = new IngredientsController();
@@ -15,7 +16,7 @@ IngredientRouter.get('/', ingredientsController.index);
 IngredientRouter.post(
   '/scan',
   upload.single('ingredients'),
-  resizeImage,
+  UploadImage,
   recognizeController.index,
 );
 IngredientRouter.get('/:id', ingredientsController.show);
