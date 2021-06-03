@@ -1,0 +1,1003 @@
+"use strict";
+var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, generator) {
+    function adopt(value) { return value instanceof P ? value : new P(function (resolve) { resolve(value); }); }
+    return new (P || (P = Promise))(function (resolve, reject) {
+        function fulfilled(value) { try { step(generator.next(value)); } catch (e) { reject(e); } }
+        function rejected(value) { try { step(generator["throw"](value)); } catch (e) { reject(e); } }
+        function step(result) { result.done ? resolve(result.value) : adopt(result.value).then(fulfilled, rejected); }
+        step((generator = generator.apply(thisArg, _arguments || [])).next());
+    });
+};
+var __generator = (this && this.__generator) || function (thisArg, body) {
+    var _ = { label: 0, sent: function() { if (t[0] & 1) throw t[1]; return t[1]; }, trys: [], ops: [] }, f, y, t, g;
+    return g = { next: verb(0), "throw": verb(1), "return": verb(2) }, typeof Symbol === "function" && (g[Symbol.iterator] = function() { return this; }), g;
+    function verb(n) { return function (v) { return step([n, v]); }; }
+    function step(op) {
+        if (f) throw new TypeError("Generator is already executing.");
+        while (_) try {
+            if (f = 1, y && (t = op[0] & 2 ? y["return"] : op[0] ? y["throw"] || ((t = y["return"]) && t.call(y), 0) : y.next) && !(t = t.call(y, op[1])).done) return t;
+            if (y = 0, t) op = [op[0] & 2, t.value];
+            switch (op[0]) {
+                case 0: case 1: t = op; break;
+                case 4: _.label++; return { value: op[1], done: false };
+                case 5: _.label++; y = op[1]; op = [0]; continue;
+                case 7: op = _.ops.pop(); _.trys.pop(); continue;
+                default:
+                    if (!(t = _.trys, t = t.length > 0 && t[t.length - 1]) && (op[0] === 6 || op[0] === 2)) { _ = 0; continue; }
+                    if (op[0] === 3 && (!t || (op[1] > t[0] && op[1] < t[3]))) { _.label = op[1]; break; }
+                    if (op[0] === 6 && _.label < t[1]) { _.label = t[1]; t = op; break; }
+                    if (t && _.label < t[2]) { _.label = t[2]; _.ops.push(op); break; }
+                    if (t[2]) _.ops.pop();
+                    _.trys.pop(); continue;
+            }
+            op = body.call(thisArg, _);
+        } catch (e) { op = [6, e]; y = 0; } finally { f = t = 0; }
+        if (op[0] & 5) throw op[1]; return { value: op[0] ? op[1] : void 0, done: true };
+    }
+};
+Object.defineProperty(exports, "__esModule", { value: true });
+var uuid_1 = require("uuid");
+var Brands_1 = require("../../models/Brands");
+var SeedData = [
+    {
+        id: uuid_1.v4(),
+        name: 'WS Naturais',
+        description: 'Marca adicionada pelo selo Vegano',
+        createdAt: "" + new Date(),
+        updatedAt: "" + new Date(),
+    },
+    {
+        id: uuid_1.v4(),
+        name: 'Wickbold',
+        description: 'Marca adicionada pelo selo Vegano',
+        createdAt: "" + new Date(),
+        updatedAt: "" + new Date(),
+    },
+    {
+        id: uuid_1.v4(),
+        name: 'Vittay',
+        description: 'Marca adicionada pelo selo Vegano',
+        createdAt: "" + new Date(),
+        updatedAt: "" + new Date(),
+    },
+    {
+        id: uuid_1.v4(),
+        name: 'Vitale Integral',
+        description: 'Marca adicionada pelo selo Vegano',
+        createdAt: "" + new Date(),
+        updatedAt: "" + new Date(),
+    },
+    {
+        id: uuid_1.v4(),
+        name: 'VidaVeg',
+        description: 'Marca adicionada pelo selo Vegano',
+        createdAt: "" + new Date(),
+        updatedAt: "" + new Date(),
+    },
+    {
+        id: uuid_1.v4(),
+        name: 'Vegabom',
+        description: 'Marca adicionada pelo selo Vegano',
+        createdAt: "" + new Date(),
+        updatedAt: "" + new Date(),
+    },
+    {
+        id: uuid_1.v4(),
+        name: 'Vale Brilhante',
+        description: 'Marca adicionada pelo selo Vegano',
+        createdAt: "" + new Date(),
+        updatedAt: "" + new Date(),
+    },
+    {
+        id: uuid_1.v4(),
+        name: 'Up2You Cosméticos',
+        description: 'Marca adicionada pelo selo Vegano',
+        createdAt: "" + new Date(),
+        updatedAt: "" + new Date(),
+    },
+    {
+        id: uuid_1.v4(),
+        name: 'Tropisuco',
+        description: 'Marca adicionada pelo selo Vegano',
+        createdAt: "" + new Date(),
+        updatedAt: "" + new Date(),
+    },
+    {
+        id: uuid_1.v4(),
+        name: 'Tô Fit',
+        description: 'Marca adicionada pelo selo Vegano',
+        createdAt: "" + new Date(),
+        updatedAt: "" + new Date(),
+    },
+    {
+        id: uuid_1.v4(),
+        name: 'Tnuva Chocolates',
+        description: 'Marca adicionada pelo selo Vegano',
+        createdAt: "" + new Date(),
+        updatedAt: "" + new Date(),
+    },
+    {
+        id: uuid_1.v4(),
+        name: 'Tiê',
+        description: 'Marca adicionada pelo selo Vegano',
+        createdAt: "" + new Date(),
+        updatedAt: "" + new Date(),
+    },
+    {
+        id: uuid_1.v4(),
+        name: 'Tia Sônia',
+        description: 'Marca adicionada pelo selo Vegano',
+        createdAt: "" + new Date(),
+        updatedAt: "" + new Date(),
+    },
+    {
+        id: uuid_1.v4(),
+        name: 'The Body Shop',
+        description: 'Marca adicionada pelo selo Vegano',
+        createdAt: "" + new Date(),
+        updatedAt: "" + new Date(),
+    },
+    {
+        id: uuid_1.v4(),
+        name: 'Terraria Alimentos',
+        description: 'Marca adicionada pelo selo Vegano',
+        createdAt: "" + new Date(),
+        updatedAt: "" + new Date(),
+    },
+    {
+        id: uuid_1.v4(),
+        name: 'Tero',
+        description: 'Marca adicionada pelo selo Vegano',
+        createdAt: "" + new Date(),
+        updatedAt: "" + new Date(),
+    },
+    {
+        id: uuid_1.v4(),
+        name: 'Tabajara',
+        description: 'Marca adicionada pelo selo Vegano',
+        createdAt: "" + new Date(),
+        updatedAt: "" + new Date(),
+    },
+    {
+        id: uuid_1.v4(),
+        name: 'Sorvetes Rochinha',
+        description: 'Marca adicionada pelo selo Vegano',
+        createdAt: "" + new Date(),
+        updatedAt: "" + new Date(),
+    },
+    {
+        id: uuid_1.v4(),
+        name: 'Soja Mania',
+        description: 'Marca adicionada pelo selo Vegano',
+        createdAt: "" + new Date(),
+        updatedAt: "" + new Date(),
+    },
+    {
+        id: uuid_1.v4(),
+        name: 'Só Snacks',
+        description: 'Marca adicionada pelo selo Vegano',
+        createdAt: "" + new Date(),
+        updatedAt: "" + new Date(),
+    },
+    {
+        id: uuid_1.v4(),
+        name: 'Sétima Geração',
+        description: 'Marca adicionada pelo selo Vegano',
+        createdAt: "" + new Date(),
+        updatedAt: "" + new Date(),
+    },
+    {
+        id: uuid_1.v4(),
+        name: 'Sequóia',
+        description: 'Marca adicionada pelo selo Vegano',
+        createdAt: "" + new Date(),
+        updatedAt: "" + new Date(),
+    },
+    {
+        id: uuid_1.v4(),
+        name: 'Seeds',
+        description: 'Marca adicionada pelo selo Vegano',
+        createdAt: "" + new Date(),
+        updatedAt: "" + new Date(),
+    },
+    {
+        id: uuid_1.v4(),
+        name: 'Santulana',
+        description: 'Marca adicionada pelo selo Vegano',
+        createdAt: "" + new Date(),
+        updatedAt: "" + new Date(),
+    },
+    {
+        id: uuid_1.v4(),
+        name: 'Samurai Food',
+        description: 'Marca adicionada pelo selo Vegano',
+        createdAt: "" + new Date(),
+        updatedAt: "" + new Date(),
+    },
+    {
+        id: uuid_1.v4(),
+        name: 'Reserva Brasil',
+        description: 'Marca adicionada pelo selo Vegano',
+        createdAt: "" + new Date(),
+        updatedAt: "" + new Date(),
+    },
+    {
+        id: uuid_1.v4(),
+        name: 'Renata Macena',
+        description: 'Marca adicionada pelo selo Vegano',
+        createdAt: "" + new Date(),
+        updatedAt: "" + new Date(),
+    },
+    {
+        id: uuid_1.v4(),
+        name: 'Reilly Tattoo',
+        description: 'Marca adicionada pelo selo Vegano',
+        createdAt: "" + new Date(),
+        updatedAt: "" + new Date(),
+    },
+    {
+        id: uuid_1.v4(),
+        name: 'Pronto Pizza',
+        description: 'Marca adicionada pelo selo Vegano',
+        createdAt: "" + new Date(),
+        updatedAt: "" + new Date(),
+    },
+    {
+        id: uuid_1.v4(),
+        name: 'Predilecta',
+        description: 'Marca adicionada pelo selo Vegano',
+        createdAt: "" + new Date(),
+        updatedAt: "" + new Date(),
+    },
+    {
+        id: uuid_1.v4(),
+        name: 'Positiva',
+        description: 'Marca adicionada pelo selo Vegano',
+        createdAt: "" + new Date(),
+        updatedAt: "" + new Date(),
+    },
+    {
+        id: uuid_1.v4(),
+        name: 'Pizza 047',
+        description: 'Marca adicionada pelo selo Vegano',
+        createdAt: "" + new Date(),
+        updatedAt: "" + new Date(),
+    },
+    {
+        id: uuid_1.v4(),
+        name: 'Petit Sablé',
+        description: 'Marca adicionada pelo selo Vegano',
+        createdAt: "" + new Date(),
+        updatedAt: "" + new Date(),
+    },
+    {
+        id: uuid_1.v4(),
+        name: 'Petit Koan',
+        description: 'Marca adicionada pelo selo Vegano',
+        createdAt: "" + new Date(),
+        updatedAt: "" + new Date(),
+    },
+    {
+        id: uuid_1.v4(),
+        name: 'Pão de Tapioca',
+        description: 'Marca adicionada pelo selo Vegano',
+        createdAt: "" + new Date(),
+        updatedAt: "" + new Date(),
+    },
+    {
+        id: uuid_1.v4(),
+        name: 'Palmito da Fazenda',
+        description: 'Marca adicionada pelo selo Vegano',
+        createdAt: "" + new Date(),
+        updatedAt: "" + new Date(),
+    },
+    {
+        id: uuid_1.v4(),
+        name: 'Nutrivita',
+        description: 'Marca adicionada pelo selo Vegano',
+        createdAt: "" + new Date(),
+        updatedAt: "" + new Date(),
+    },
+    {
+        id: uuid_1.v4(),
+        name: 'Nutripleno',
+        description: 'Marca adicionada pelo selo Vegano',
+        createdAt: "" + new Date(),
+        updatedAt: "" + new Date(),
+    },
+    {
+        id: uuid_1.v4(),
+        name: 'Nugali',
+        description: 'Marca adicionada pelo selo Vegano',
+        createdAt: "" + new Date(),
+        updatedAt: "" + new Date(),
+    },
+    {
+        id: uuid_1.v4(),
+        name: 'Nossa Goma',
+        description: 'Marca adicionada pelo selo Vegano',
+        createdAt: "" + new Date(),
+        updatedAt: "" + new Date(),
+    },
+    {
+        id: uuid_1.v4(),
+        name: 'NG de France',
+        description: 'Marca adicionada pelo selo Vegano',
+        createdAt: "" + new Date(),
+        updatedAt: "" + new Date(),
+    },
+    {
+        id: uuid_1.v4(),
+        name: 'Naturelle',
+        description: 'Marca adicionada pelo selo Vegano',
+        createdAt: "" + new Date(),
+        updatedAt: "" + new Date(),
+    },
+    {
+        id: uuid_1.v4(),
+        name: 'Natural e Ponto',
+        description: 'Marca adicionada pelo selo Vegano',
+        createdAt: "" + new Date(),
+        updatedAt: "" + new Date(),
+    },
+    {
+        id: uuid_1.v4(),
+        name: 'Natucoa',
+        description: 'Marca adicionada pelo selo Vegano',
+        createdAt: "" + new Date(),
+        updatedAt: "" + new Date(),
+    },
+    {
+        id: uuid_1.v4(),
+        name: 'Mr. Veggy',
+        description: 'Marca adicionada pelo selo Vegano',
+        createdAt: "" + new Date(),
+        updatedAt: "" + new Date(),
+    },
+    {
+        id: uuid_1.v4(),
+        name: 'Moringa Mais Vida',
+        description: 'Marca adicionada pelo selo Vegano',
+        createdAt: "" + new Date(),
+        updatedAt: "" + new Date(),
+    },
+    {
+        id: uuid_1.v4(),
+        name: 'Moringa da Paz',
+        description: 'Marca adicionada pelo selo Vegano',
+        createdAt: "" + new Date(),
+        updatedAt: "" + new Date(),
+    },
+    {
+        id: uuid_1.v4(),
+        name: 'ML Salvio',
+        description: 'Marca adicionada pelo selo Vegano',
+        createdAt: "" + new Date(),
+        updatedAt: "" + new Date(),
+    },
+    {
+        id: uuid_1.v4(),
+        name: 'Miss Croc',
+        description: 'Marca adicionada pelo selo Vegano',
+        createdAt: "" + new Date(),
+        updatedAt: "" + new Date(),
+    },
+    {
+        id: uuid_1.v4(),
+        name: 'Minnas',
+        description: 'Marca adicionada pelo selo Vegano',
+        createdAt: "" + new Date(),
+        updatedAt: "" + new Date(),
+    },
+    {
+        id: uuid_1.v4(),
+        name: 'Minha Comida Especial',
+        description: 'Marca adicionada pelo selo Vegano',
+        createdAt: "" + new Date(),
+        updatedAt: "" + new Date(),
+    },
+    {
+        id: uuid_1.v4(),
+        name: 'Mantiqueira',
+        description: 'Marca adicionada pelo selo Vegano',
+        createdAt: "" + new Date(),
+        updatedAt: "" + new Date(),
+    },
+    {
+        id: uuid_1.v4(),
+        name: 'Maiori',
+        description: 'Marca adicionada pelo selo Vegano',
+        createdAt: "" + new Date(),
+        updatedAt: "" + new Date(),
+    },
+    {
+        id: uuid_1.v4(),
+        name: 'Magnum',
+        description: 'Marca adicionada pelo selo Vegano',
+        createdAt: "" + new Date(),
+        updatedAt: "" + new Date(),
+    },
+    {
+        id: uuid_1.v4(),
+        name: 'Magic Massas',
+        description: 'Marca adicionada pelo selo Vegano',
+        createdAt: "" + new Date(),
+        updatedAt: "" + new Date(),
+    },
+    {
+        id: uuid_1.v4(),
+        name: 'LOWKO',
+        description: 'Marca adicionada pelo selo Vegano',
+        createdAt: "" + new Date(),
+        updatedAt: "" + new Date(),
+    },
+    {
+        id: uuid_1.v4(),
+        name: 'Los Mexicanos',
+        description: 'Marca adicionada pelo selo Vegano',
+        createdAt: "" + new Date(),
+        updatedAt: "" + new Date(),
+    },
+    {
+        id: uuid_1.v4(),
+        name: 'Lojas Americanas',
+        description: 'Marca adicionada pelo selo Vegano',
+        createdAt: "" + new Date(),
+        updatedAt: "" + new Date(),
+    },
+    {
+        id: uuid_1.v4(),
+        name: 'LEVEN',
+        description: 'Marca adicionada pelo selo Vegano',
+        createdAt: "" + new Date(),
+        updatedAt: "" + new Date(),
+    },
+    {
+        id: uuid_1.v4(),
+        name: 'Labot',
+        description: 'Marca adicionada pelo selo Vegano',
+        createdAt: "" + new Date(),
+        updatedAt: "" + new Date(),
+    },
+    {
+        id: uuid_1.v4(),
+        name: 'INSPIRE',
+        description: 'Marca adicionada pelo selo Vegano',
+        createdAt: "" + new Date(),
+        updatedAt: "" + new Date(),
+    },
+    {
+        id: uuid_1.v4(),
+        name: 'Hypera',
+        description: 'Marca adicionada pelo selo Vegano',
+        createdAt: "" + new Date(),
+        updatedAt: "" + new Date(),
+    },
+    {
+        id: uuid_1.v4(),
+        name: 'Hellmann´s',
+        description: 'Marca adicionada pelo selo Vegano',
+        createdAt: "" + new Date(),
+        updatedAt: "" + new Date(),
+    },
+    {
+        id: uuid_1.v4(),
+        name: 'Hart´s Natural',
+        description: 'Marca adicionada pelo selo Vegano',
+        createdAt: "" + new Date(),
+        updatedAt: "" + new Date(),
+    },
+    {
+        id: uuid_1.v4(),
+        name: 'Hamburgo Hummel',
+        description: 'Marca adicionada pelo selo Vegano',
+        createdAt: "" + new Date(),
+        updatedAt: "" + new Date(),
+    },
+    {
+        id: uuid_1.v4(),
+        name: 'Guarani Açai',
+        description: 'Marca adicionada pelo selo Vegano',
+        createdAt: "" + new Date(),
+        updatedAt: "" + new Date(),
+    },
+    {
+        id: uuid_1.v4(),
+        name: 'Grano Square',
+        description: 'Marca adicionada pelo selo Vegano',
+        createdAt: "" + new Date(),
+        updatedAt: "" + new Date(),
+    },
+    {
+        id: uuid_1.v4(),
+        name: 'Grani Amici',
+        description: 'Marca adicionada pelo selo Vegano',
+        createdAt: "" + new Date(),
+        updatedAt: "" + new Date(),
+    },
+    {
+        id: uuid_1.v4(),
+        name: 'GOÛT RAFFINÉ',
+        description: 'Marca adicionada pelo selo Vegano',
+        createdAt: "" + new Date(),
+        updatedAt: "" + new Date(),
+    },
+    {
+        id: uuid_1.v4(),
+        name: 'Gerônimo',
+        description: 'Marca adicionada pelo selo Vegano',
+        createdAt: "" + new Date(),
+        updatedAt: "" + new Date(),
+    },
+    {
+        id: uuid_1.v4(),
+        name: 'Gauer do Brasil',
+        description: 'Marca adicionada pelo selo Vegano',
+        createdAt: "" + new Date(),
+        updatedAt: "" + new Date(),
+    },
+    {
+        id: uuid_1.v4(),
+        name: 'Galpão da Pizza',
+        description: 'Marca adicionada pelo selo Vegano',
+        createdAt: "" + new Date(),
+        updatedAt: "" + new Date(),
+    },
+    {
+        id: uuid_1.v4(),
+        name: 'Fugini',
+        description: 'Marca adicionada pelo selo Vegano',
+        createdAt: "" + new Date(),
+        updatedAt: "" + new Date(),
+    },
+    {
+        id: uuid_1.v4(),
+        name: 'Frisabor',
+        description: 'Marca adicionada pelo selo Vegano',
+        createdAt: "" + new Date(),
+        updatedAt: "" + new Date(),
+    },
+    {
+        id: uuid_1.v4(),
+        name: 'Frescoco',
+        description: 'Marca adicionada pelo selo Vegano',
+        createdAt: "" + new Date(),
+        updatedAt: "" + new Date(),
+    },
+    {
+        id: uuid_1.v4(),
+        name: 'Flow',
+        description: 'Marca adicionada pelo selo Vegano',
+        createdAt: "" + new Date(),
+        updatedAt: "" + new Date(),
+    },
+    {
+        id: uuid_1.v4(),
+        name: 'Flormel',
+        description: 'Marca adicionada pelo selo Vegano',
+        createdAt: "" + new Date(),
+        updatedAt: "" + new Date(),
+    },
+    {
+        id: uuid_1.v4(),
+        name: 'Flora',
+        description: 'Marca adicionada pelo selo Vegano',
+        createdAt: "" + new Date(),
+        updatedAt: "" + new Date(),
+    },
+    {
+        id: uuid_1.v4(),
+        name: 'Flor de Sal',
+        description: 'Marca adicionada pelo selo Vegano',
+        createdAt: "" + new Date(),
+        updatedAt: "" + new Date(),
+    },
+    {
+        id: uuid_1.v4(),
+        name: 'FHOM',
+        description: 'Marca adicionada pelo selo Vegano',
+        createdAt: "" + new Date(),
+        updatedAt: "" + new Date(),
+    },
+    {
+        id: uuid_1.v4(),
+        name: 'Família de Minas',
+        description: 'Marca adicionada pelo selo Vegano',
+        createdAt: "" + new Date(),
+        updatedAt: "" + new Date(),
+    },
+    {
+        id: uuid_1.v4(),
+        name: 'Ethic',
+        description: 'Marca adicionada pelo selo Vegano',
+        createdAt: "" + new Date(),
+        updatedAt: "" + new Date(),
+    },
+    {
+        id: uuid_1.v4(),
+        name: 'Espirito Cacau',
+        description: 'Marca adicionada pelo selo Vegano',
+        createdAt: "" + new Date(),
+        updatedAt: "" + new Date(),
+    },
+    {
+        id: uuid_1.v4(),
+        name: 'Emi Corado',
+        description: 'Marca adicionada pelo selo Vegano',
+        createdAt: "" + new Date(),
+        updatedAt: "" + new Date(),
+    },
+    {
+        id: uuid_1.v4(),
+        name: 'Ecocaps',
+        description: 'Marca adicionada pelo selo Vegano',
+        createdAt: "" + new Date(),
+        updatedAt: "" + new Date(),
+    },
+    {
+        id: uuid_1.v4(),
+        name: 'Duduxo',
+        description: 'Marca adicionada pelo selo Vegano',
+        createdAt: "" + new Date(),
+        updatedAt: "" + new Date(),
+    },
+    {
+        id: uuid_1.v4(),
+        name: 'DuBalaco',
+        description: 'Marca adicionada pelo selo Vegano',
+        createdAt: "" + new Date(),
+        updatedAt: "" + new Date(),
+    },
+    {
+        id: uuid_1.v4(),
+        name: 'Dr. Oetker',
+        description: 'Marca adicionada pelo selo Vegano',
+        createdAt: "" + new Date(),
+        updatedAt: "" + new Date(),
+    },
+    {
+        id: uuid_1.v4(),
+        name: 'Dom Spinosa Vinagres',
+        description: 'Marca adicionada pelo selo Vegano',
+        createdAt: "" + new Date(),
+        updatedAt: "" + new Date(),
+    },
+    {
+        id: uuid_1.v4(),
+        name: 'Distr. Mundo Verde',
+        description: 'Marca adicionada pelo selo Vegano',
+        createdAt: "" + new Date(),
+        updatedAt: "" + new Date(),
+    },
+    {
+        id: uuid_1.v4(),
+        name: 'Diletto',
+        description: 'Marca adicionada pelo selo Vegano',
+        createdAt: "" + new Date(),
+        updatedAt: "" + new Date(),
+    },
+    {
+        id: uuid_1.v4(),
+        name: 'Delicias do Forno',
+        description: 'Marca adicionada pelo selo Vegano',
+        createdAt: "" + new Date(),
+        updatedAt: "" + new Date(),
+    },
+    {
+        id: uuid_1.v4(),
+        name: 'DEJC',
+        description: 'Marca adicionada pelo selo Vegano',
+        createdAt: "" + new Date(),
+        updatedAt: "" + new Date(),
+    },
+    {
+        id: uuid_1.v4(),
+        name: 'Dani Fernandes',
+        description: 'Marca adicionada pelo selo Vegano',
+        createdAt: "" + new Date(),
+        updatedAt: "" + new Date(),
+    },
+    {
+        id: uuid_1.v4(),
+        name: 'Da Ilha',
+        description: 'Marca adicionada pelo selo Vegano',
+        createdAt: "" + new Date(),
+        updatedAt: "" + new Date(),
+    },
+    {
+        id: uuid_1.v4(),
+        name: 'Coopalm',
+        description: 'Marca adicionada pelo selo Vegano',
+        createdAt: "" + new Date(),
+        updatedAt: "" + new Date(),
+    },
+    {
+        id: uuid_1.v4(),
+        name: 'Comidas do Bem',
+        description: 'Marca adicionada pelo selo Vegano',
+        createdAt: "" + new Date(),
+        updatedAt: "" + new Date(),
+    },
+    {
+        id: uuid_1.v4(),
+        name: 'Chocolife',
+        description: 'Marca adicionada pelo selo Vegano',
+        createdAt: "" + new Date(),
+        updatedAt: "" + new Date(),
+    },
+    {
+        id: uuid_1.v4(),
+        name: 'Chocolates Bahia Superior',
+        description: 'Marca adicionada pelo selo Vegano',
+        createdAt: "" + new Date(),
+        updatedAt: "" + new Date(),
+    },
+    {
+        id: uuid_1.v4(),
+        name: 'Chefel',
+        description: 'Marca adicionada pelo selo Vegano',
+        createdAt: "" + new Date(),
+        updatedAt: "" + new Date(),
+    },
+    {
+        id: uuid_1.v4(),
+        name: 'Cervejaria Dádiva',
+        description: 'Marca adicionada pelo selo Vegano',
+        createdAt: "" + new Date(),
+        updatedAt: "" + new Date(),
+    },
+    {
+        id: uuid_1.v4(),
+        name: 'Cerveja Praya',
+        description: 'Marca adicionada pelo selo Vegano',
+        createdAt: "" + new Date(),
+        updatedAt: "" + new Date(),
+    },
+    {
+        id: uuid_1.v4(),
+        name: 'Cassava',
+        description: 'Marca adicionada pelo selo Vegano',
+        createdAt: "" + new Date(),
+        updatedAt: "" + new Date(),
+    },
+    {
+        id: uuid_1.v4(),
+        name: 'Caseiros da Roça',
+        description: 'Marca adicionada pelo selo Vegano',
+        createdAt: "" + new Date(),
+        updatedAt: "" + new Date(),
+    },
+    {
+        id: uuid_1.v4(),
+        name: 'Casa Valduga',
+        description: 'Marca adicionada pelo selo Vegano',
+        createdAt: "" + new Date(),
+        updatedAt: "" + new Date(),
+    },
+    {
+        id: uuid_1.v4(),
+        name: 'CarobHouse',
+        description: 'Marca adicionada pelo selo Vegano',
+        createdAt: "" + new Date(),
+        updatedAt: "" + new Date(),
+    },
+    {
+        id: uuid_1.v4(),
+        name: 'Carne de Jaca & Cia',
+        description: 'Marca adicionada pelo selo Vegano',
+        createdAt: "" + new Date(),
+        updatedAt: "" + new Date(),
+    },
+    {
+        id: uuid_1.v4(),
+        name: 'Caio Prado Alimentos',
+        description: 'Marca adicionada pelo selo Vegano',
+        createdAt: "" + new Date(),
+        updatedAt: "" + new Date(),
+    },
+    {
+        id: uuid_1.v4(),
+        name: 'Café Rancheiro',
+        description: 'Marca adicionada pelo selo Vegano',
+        createdAt: "" + new Date(),
+        updatedAt: "" + new Date(),
+    },
+    {
+        id: uuid_1.v4(),
+        name: 'Borriello',
+        description: 'Marca adicionada pelo selo Vegano',
+        createdAt: "" + new Date(),
+        updatedAt: "" + new Date(),
+    },
+    {
+        id: uuid_1.v4(),
+        name: 'Bonduelle',
+        description: 'Marca adicionada pelo selo Vegano',
+        createdAt: "" + new Date(),
+        updatedAt: "" + new Date(),
+    },
+    {
+        id: uuid_1.v4(),
+        name: 'BlocksBarra',
+        description: 'Marca adicionada pelo selo Vegano',
+        createdAt: "" + new Date(),
+        updatedAt: "" + new Date(),
+    },
+    {
+        id: uuid_1.v4(),
+        name: 'BIOZ',
+        description: 'Marca adicionada pelo selo Vegano',
+        createdAt: "" + new Date(),
+        updatedAt: "" + new Date(),
+    },
+    {
+        id: uuid_1.v4(),
+        name: 'Biowash',
+        description: 'Marca adicionada pelo selo Vegano',
+        createdAt: "" + new Date(),
+        updatedAt: "" + new Date(),
+    },
+    {
+        id: uuid_1.v4(),
+        name: 'Bioalimentos',
+        description: 'Marca adicionada pelo selo Vegano',
+        createdAt: "" + new Date(),
+        updatedAt: "" + new Date(),
+    },
+    {
+        id: uuid_1.v4(),
+        name: 'Bergamia',
+        description: 'Marca adicionada pelo selo Vegano',
+        createdAt: "" + new Date(),
+        updatedAt: "" + new Date(),
+    },
+    {
+        id: uuid_1.v4(),
+        name: 'Benni',
+        description: 'Marca adicionada pelo selo Vegano',
+        createdAt: "" + new Date(),
+        updatedAt: "" + new Date(),
+    },
+    {
+        id: uuid_1.v4(),
+        name: 'Bellaziata',
+        description: 'Marca adicionada pelo selo Vegano',
+        createdAt: "" + new Date(),
+        updatedAt: "" + new Date(),
+    },
+    {
+        id: uuid_1.v4(),
+        name: 'Bananinha Paraibuna',
+        description: 'Marca adicionada pelo selo Vegano',
+        createdAt: "" + new Date(),
+        updatedAt: "" + new Date(),
+    },
+    {
+        id: uuid_1.v4(),
+        name: 'Banana Brasil',
+        description: 'Marca adicionada pelo selo Vegano',
+        createdAt: "" + new Date(),
+        updatedAt: "" + new Date(),
+    },
+    {
+        id: uuid_1.v4(),
+        name: 'Bambina',
+        description: 'Marca adicionada pelo selo Vegano',
+        createdAt: "" + new Date(),
+        updatedAt: "" + new Date(),
+    },
+    {
+        id: uuid_1.v4(),
+        name: 'Ayurveda Yoga Club',
+        description: 'Marca adicionada pelo selo Vegano',
+        createdAt: "" + new Date(),
+        updatedAt: "" + new Date(),
+    },
+    {
+        id: uuid_1.v4(),
+        name: 'As Resinas',
+        description: 'Marca adicionada pelo selo Vegano',
+        createdAt: "" + new Date(),
+        updatedAt: "" + new Date(),
+    },
+    {
+        id: uuid_1.v4(),
+        name: 'Arezzo',
+        description: 'Marca adicionada pelo selo Vegano',
+        createdAt: "" + new Date(),
+        updatedAt: "" + new Date(),
+    },
+    {
+        id: uuid_1.v4(),
+        name: 'ApisNutri',
+        description: 'Marca adicionada pelo selo Vegano',
+        createdAt: "" + new Date(),
+        updatedAt: "" + new Date(),
+    },
+    {
+        id: uuid_1.v4(),
+        name: 'Amma',
+        description: 'Marca adicionada pelo selo Vegano',
+        createdAt: "" + new Date(),
+        updatedAt: "" + new Date(),
+    },
+    {
+        id: uuid_1.v4(),
+        name: 'Aminogel',
+        description: 'Marca adicionada pelo selo Vegano',
+        createdAt: "" + new Date(),
+        updatedAt: "" + new Date(),
+    },
+    {
+        id: uuid_1.v4(),
+        name: 'AmazonBai',
+        description: 'Marca adicionada pelo selo Vegano',
+        createdAt: "" + new Date(),
+        updatedAt: "" + new Date(),
+    },
+    {
+        id: uuid_1.v4(),
+        name: 'Amana Brasil',
+        description: 'Marca adicionada pelo selo Vegano',
+        createdAt: "" + new Date(),
+        updatedAt: "" + new Date(),
+    },
+    {
+        id: uuid_1.v4(),
+        name: 'Alimentos Convitta',
+        description: 'Marca adicionada pelo selo Vegano',
+        createdAt: "" + new Date(),
+        updatedAt: "" + new Date(),
+    },
+    {
+        id: uuid_1.v4(),
+        name: 'Alho Oishii',
+        description: 'Marca adicionada pelo selo Vegano',
+        createdAt: "" + new Date(),
+        updatedAt: "" + new Date(),
+    },
+    {
+        id: uuid_1.v4(),
+        name: 'Álcool Ferreira',
+        description: 'Marca adicionada pelo selo Vegano',
+        createdAt: "" + new Date(),
+        updatedAt: "" + new Date(),
+    },
+    {
+        id: uuid_1.v4(),
+        name: 'Açaí Imperador',
+        description: 'Marca adicionada pelo selo Vegano',
+        createdAt: "" + new Date(),
+        updatedAt: "" + new Date(),
+    },
+    {
+        id: uuid_1.v4(),
+        name: 'A Tal da Castanha',
+        description: 'Marca adicionada pelo selo Vegano',
+        createdAt: "" + new Date(),
+        updatedAt: "" + new Date(),
+    },
+];
+var BrandSeedData = /** @class */ (function () {
+    function BrandSeedData() {
+    }
+    BrandSeedData.prototype.run = function (factory, connection) {
+        return __awaiter(this, void 0, void 0, function () {
+            return __generator(this, function (_a) {
+                switch (_a.label) {
+                    case 0: return [4 /*yield*/, connection
+                            .createQueryBuilder()
+                            .insert()
+                            .into(Brands_1.Brand)
+                            .values(SeedData)
+                            .execute()];
+                    case 1:
+                        _a.sent();
+                        return [2 /*return*/];
+                }
+            });
+        });
+    };
+    return BrandSeedData;
+}());
+exports.default = BrandSeedData;
