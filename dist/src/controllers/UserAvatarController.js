@@ -60,7 +60,7 @@ var UserAvatarController = /** @class */ (function () {
                     case 1:
                         user = _a.sent();
                         delete user.password;
-                        return [2 /*return*/, response.json(class_transformer_1.classToClass(user))];
+                        return [2 /*return*/, response.json(class_transformer_1.classToPlain(user))];
                 }
             });
         });

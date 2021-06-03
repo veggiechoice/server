@@ -1,5 +1,5 @@
 import { Request, Response } from 'express';
-import { classToClass } from 'class-transformer';
+import { classToPlain } from 'class-transformer';
 import UpdateUserAvatarService from '../services/UpdateAvatarService';
 import { S3StorageProvider } from '../providers/S3StorageProvider';
 
@@ -14,6 +14,6 @@ export default class UserAvatarController {
     });
 
     delete user.password;
-    return response.json(classToClass(user));
+    return response.json(classToPlain(user));
   }
 }
