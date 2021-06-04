@@ -49,7 +49,8 @@ class User {
 
   @Expose()
   get avatar_url() {
-    return `${process.env.API_URL}/${this.avatar}`;
+    if (this.avatar) return `${process.env.API_URL}/${this.avatar}`;
+    return null;
   }
 }
 

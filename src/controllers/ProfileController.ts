@@ -28,7 +28,7 @@ class ProfileController {
 
     const userWithUpdatedEmail = await usersRepository.findByEmail(email);
 
-    if (userWithUpdatedEmail) {
+    if (userWithUpdatedEmail && userWithUpdatedEmail.email !== user.email) {
       throw new AppError('This e-mail is already in use', 'DuplicityOfUsers');
     }
 
