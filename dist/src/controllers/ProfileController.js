@@ -71,7 +71,7 @@ var ProfileController = /** @class */ (function () {
                         return [4 /*yield*/, usersRepository.findByEmail(email)];
                     case 2:
                         userWithUpdatedEmail = _c.sent();
-                        if (userWithUpdatedEmail) {
+                        if (userWithUpdatedEmail && userWithUpdatedEmail.email !== user.email) {
                             throw new AppError_1.default('This e-mail is already in use', 'DuplicityOfUsers');
                         }
                         if (name) {

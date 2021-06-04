@@ -24,7 +24,9 @@ var User = /** @class */ (function () {
     }
     Object.defineProperty(User.prototype, "avatar_url", {
         get: function () {
-            return process.env.API_URL + "/" + this.avatar;
+            if (this.avatar)
+                return process.env.API_URL + "/" + this.avatar;
+            return null;
         },
         enumerable: false,
         configurable: true
